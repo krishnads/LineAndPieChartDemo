@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NLG-lt-iLu">
+                                <rect key="frame" x="265" y="260" width="71" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPB-fg-fnu">
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
+                                        <state key="normal" title="Line Chart"/>
+                                        <connections>
+                                            <segue destination="XNz-yL-OHq" kind="show" id="YwH-eP-YLY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahP-cv-cqB">
+                                        <rect key="frame" x="0.0" y="50" width="71" height="30"/>
+                                        <state key="normal" title="Pie Chart"/>
+                                        <connections>
+                                            <segue destination="L7v-ou-Ssj" kind="show" id="iHi-29-D7Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NLG-lt-iLu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TBU-hj-f42"/>
+                            <constraint firstItem="NLG-lt-iLu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p4K-TJ-7fj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1uN-SZ-Gm6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1382" y="872"/>
+        </scene>
+        <!--Line Chart-->
+        <scene sceneID="km3-GE-Ij6">
+            <objects>
+                <viewController title="Line Chart" id="XNz-yL-OHq" customClass="LineChartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oX6-Rr-xK0"/>
+                        <viewControllerLayoutGuide type="bottom" id="y5Z-vu-ZvI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oAv-35-Z6k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hak-qE-xEc">
+                                <rect key="frame" x="100" y="0.0" width="500" height="600"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hak-qE-xEc" firstAttribute="top" secondItem="oX6-Rr-xK0" secondAttribute="bottom" id="W6A-p0-QRT"/>
+                            <constraint firstItem="y5Z-vu-ZvI" firstAttribute="top" secondItem="hak-qE-xEc" secondAttribute="bottom" id="jZY-qV-qsk"/>
+                            <constraint firstAttribute="trailing" secondItem="hak-qE-xEc" secondAttribute="trailing" id="ovX-QL-xOT"/>
+                            <constraint firstItem="hak-qE-xEc" firstAttribute="top" secondItem="oAv-35-Z6k" secondAttribute="top" id="pPu-sW-Edm"/>
+                            <constraint firstItem="hak-qE-xEc" firstAttribute="leading" secondItem="oAv-35-Z6k" secondAttribute="leading" constant="100" id="xvn-Kr-Ufw"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="W6A-p0-QRT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="hak-qE-xEc" id="jKh-EX-Zh9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z20-1L-7vl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2104" y="1274"/>
+        </scene>
+        <!--Line Chart View Controller-->
+        <scene sceneID="b2b-Yz-8io">
+            <objects>
+                <viewController id="1FQ-uc-Fdm" customClass="LineChartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KGK-O4-7IZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="f6c-Xc-VrH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="miU-pd-zmJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InT-fG-MNC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7y-aU-YwT">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <subviews>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nm6-Nn-bOk">
+                                                <rect key="frame" x="139" y="263" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Nm6-Nn-bOk" firstAttribute="centerX" secondItem="p7y-aU-YwT" secondAttribute="centerX" id="L4i-Di-8j2"/>
+                                            <constraint firstItem="Nm6-Nn-bOk" firstAttribute="top" secondItem="p7y-aU-YwT" secondAttribute="top" constant="263" id="TvC-zg-rnU"/>
+                                            <constraint firstItem="Nm6-Nn-bOk" firstAttribute="leading" secondItem="p7y-aU-YwT" secondAttribute="leading" constant="139" id="inm-DX-jeN"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nm6-Nn-bOk" secondAttribute="trailing" constant="139" id="n7W-fw-LkC"/>
+                                            <constraint firstItem="Nm6-Nn-bOk" firstAttribute="centerY" secondItem="p7y-aU-YwT" secondAttribute="centerY" constant="-10.5" id="pDf-eq-2sH"/>
+                                            <constraint firstAttribute="bottom" secondItem="Nm6-Nn-bOk" secondAttribute="bottom" constant="284" id="qIw-re-dTk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="p7y-aU-YwT" firstAttribute="top" secondItem="InT-fG-MNC" secondAttribute="top" id="3Ak-Ky-ACF"/>
+                                    <constraint firstAttribute="bottom" secondItem="p7y-aU-YwT" secondAttribute="bottom" id="3NC-8f-Y5I"/>
+                                    <constraint firstAttribute="trailing" secondItem="p7y-aU-YwT" secondAttribute="trailing" id="C9C-kF-CjY"/>
+                                    <constraint firstItem="p7y-aU-YwT" firstAttribute="leading" secondItem="InT-fG-MNC" secondAttribute="leading" id="KXk-bI-pyf"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="InT-fG-MNC" firstAttribute="top" secondItem="miU-pd-zmJ" secondAttribute="top" id="0KP-iS-Hak"/>
+                            <constraint firstItem="InT-fG-MNC" firstAttribute="leading" secondItem="miU-pd-zmJ" secondAttribute="leading" id="E2Q-r3-YQj"/>
+                            <constraint firstItem="InT-fG-MNC" firstAttribute="top" secondItem="KGK-O4-7IZ" secondAttribute="bottom" id="PAk-OO-rco"/>
+                            <constraint firstItem="f6c-Xc-VrH" firstAttribute="top" secondItem="InT-fG-MNC" secondAttribute="bottom" id="Y5z-C3-auV"/>
+                            <constraint firstAttribute="trailing" secondItem="InT-fG-MNC" secondAttribute="trailing" id="jRl-BY-iYV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PAk-OO-rco"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="chartView" destination="p7y-aU-YwT" id="gXH-98-ybI"/>
+                        <outlet property="scrollView" destination="InT-fG-MNC" id="zRR-No-pFv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hNf-D1-Job" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2000" y="1972"/>
+        </scene>
+        <!--Pie ChartVC-->
+        <scene sceneID="5PS-Ug-tE1">
+            <objects>
+                <viewController id="L7v-ou-Ssj" customClass="PieChartVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eux-xB-irK"/>
+                        <viewControllerLayoutGuide type="bottom" id="gVl-El-3Mz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J4Z-7G-Fh9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L5f-zU-16b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2104" y="477"/>
+        </scene>
+    </scenes>
+</document>
